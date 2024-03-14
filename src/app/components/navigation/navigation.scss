@@ -1,0 +1,113 @@
+#navigation{
+
+	&::before{
+		content:'';
+		position:absolute;
+		top:0%;
+		left:0%;
+		width:100%;
+		height: 110px;
+		
+		background: url('/decors/awning-nav.png') ;
+		// background-repeat: no-repeat;
+		background-repeat: repeat-x;
+		z-index: -1;
+	}
+	.confine{
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns:400px 1fr;
+		min-height: 200px;
+		position: relative;
+		width: max-content;
+		// backdrop-filter: blur(1px);
+		&::before{
+			background: linear-gradient(#d3e2f9 50% , transparent 100%);
+			content:'';
+			position:absolute;
+			top:0%;
+			left:0%;
+			width:100%;
+			height:100%;
+			z-index: -1;
+			mask: linear-gradient(to left, transparent 0%, black 5%, black 95%, transparent 100%);
+		}
+		.logo-container{
+			position: relative;
+			height: 100%;
+			img{
+				max-width: 100%;
+			}
+			.decor_circle{
+				position:absolute;
+				top:-100%;
+				left:5%;
+				// height: 500px;
+				// width: 500px;
+				// width:100%;
+				// height:100%;
+
+			}
+			.main-logo{
+				position: absolute;
+				z-index: 1;
+				// max-height: 100px;
+			}
+		}
+
+		nav{
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			// gap: ;
+			.btn-awning{
+				background: #CBE0FF;
+				box-shadow:4px 4px 0px #9AA5DE;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 1em 2em;
+				min-width: 120px;
+				// border-radius: 0 0 4em 4em;
+				border-radius: 0 0 50% 50%;
+				transition: all 400ms ease;
+
+				&:nth-of-type(even){
+					background: #FFC5C9;
+					.icon{
+						color: #FFC5C9;
+					}
+					.name{
+						color: white;
+					}
+				}
+				&:hover{
+					padding: 1.5em 2em;
+		
+					// height: ;
+				}
+				.icon{
+					display: block;
+					// background;
+					width: 50px;
+					height: 50px;
+					background: white;
+					color: #9AA5DE;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-radius: 50%;
+					font-size: 2rem;
+				}
+				.name{
+					font-weight: bold;
+					margin: .2em 0;
+					color: #9AA5DE;
+				}
+			}
+		}
+	}
+
+}
