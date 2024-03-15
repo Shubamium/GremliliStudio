@@ -20,7 +20,7 @@ export default function PageTitle({
 					<div className="action">
 						<button className='btn btn-colored btn-terms'>
 							<FaList/> Terms of Service
-							<span className='sub-title'>GRAPHICS</span>
+							<span className='sub-title'>{title}</span>
 						</button>
 						<a href='https://vgen.co/Gremlili' target='_blank' className="btn btn-colored green btn-logo">
 								<img src="/graphics/vgen-badge.png" alt="" />

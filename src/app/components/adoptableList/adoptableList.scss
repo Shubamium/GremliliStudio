@@ -1,0 +1,32 @@
+.adoptable-list{
+	margin: 100px 0;
+	background: url('/backgrounds/plaid-two.png');
+	min-height: 800px;
+	outline: 4px solid white;
+	.action{
+		display: flex;
+		align-items: center;
+		gap: 1em;
+		justify-content: center;
+		padding: 1em 0;
+	}
+	
+	.lists{
+		padding: 2em;
+		mask:linear-gradient(to left,transparent 0%, black 5%, black 95%, transparent 100%);
+		filter: drop-shadow(2px 2px 5px #A6BAEB);
+		.slick-arrow{
+			transition: all 250ms ;
+			z-index: 200;
+			position: absolute;
+			top: 95%;
+			right: 50%;
+			scale: 2;
+			&.slick-prev{
+				right: calc(50% + 50px);
+				left: initial;
+				// top: 97%;
+			}
+		}
+	}
+}
