@@ -51,7 +51,7 @@ export default function Navigation({}: Props) {
 								ADOPTABLES
 							</span>
 						</Link>
-						<Link href={'/adoptables'} className='btn-awning'>
+						<Link href={'/models'} className='btn-awning'>
 							<span className='icon'>
 								<PiMaskHappyFill/>
 							</span>

@@ -1,0 +1,59 @@
+.page-title{
+	background: white;
+	color: #88A4E4;
+	&::before{
+		content:'';
+		position:absolute;
+		bottom:100%;
+		left:0%;
+		width:100%;
+		// height:100%;
+		height: 50px;
+		background: url('/decors/awning-top.png');
+		background-repeat: repeat-x;
+		// background: red;
+	}
+	position: relative;
+	margin-top: 100px;
+	border-bottom: 10px solid #88A4E4;
+	.confine{
+		max-width: 1200px;
+		margin: 0 auto;
+		// padding-top: -100px;
+		position: relative;
+		padding: 2em 0;
+		h2{
+			font-size: 3rem;
+			color: #DBB073;
+			text-shadow: 2px 2px #FFF0A3,-2px -2px #FFF0A3,-2px 0px #FFF0A3,0px -2px #FFF0A3;
+		}
+		p{
+			max-width: 70%;
+			margin-bottom: 2em;
+		}
+		.decor_palette{
+			position: absolute;
+			right: 0%;
+			top: -20%;
+			scale: 1.2;
+		}
+		.action{
+			display: flex;
+			.btn-terms{
+				position: relative;
+				gap: 1em;
+				.sub-title{
+					position: absolute;
+					right: 5%;
+					top: -30%;
+					background: #88A4E4;
+					color: white;
+					border-radius: 2em;
+					padding: .15em .5em;
+					font-size: .7rem;
+				}
+			}
+			gap: 1em;
+		}
+	}
+}

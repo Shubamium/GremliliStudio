@@ -32,9 +32,7 @@ a {
 	background: none;
 	border: none;
 	display: block;
-	&:focus{
-		outline: none;
-	}
+
 	font-family: var(--fontAlt);
 	&:hover{
 		scale: 1.05;
@@ -99,9 +97,35 @@ a {
 		padding: .05em;
 	}
 }
+.pink{
+	--maincol: #E287C5;
+	--secondcol:#FEB7FF;
+	color: var(--maincol);
+	border-color: var(--maincol);
+	outline-color: var(--maincol);
+	box-shadow: 0px 5px 0px var(--maincol), 2px 4px 4px rgba(17, 32, 65, 0.703);
+	background-color: var(--secondcol);
+	img{
+		background: white;
+		border-color: var(--secondcol);
+		padding: .05em;
+	}
+}
 
-
-
+.purple{
+	--maincol: #675A98;
+	--secondcol:#C8B7FF;
+	color: var(--maincol);
+	border-color: var(--maincol);
+	outline-color: var(--maincol);
+	box-shadow: 0px 5px 0px var(--maincol), 2px 4px 4px rgba(17, 32, 65, 0.703);
+	background-color: var(--secondcol);
+	img{
+		background: white;
+		border-color: var(--secondcol);
+		padding: .05em;
+	}
+}
 .shadow{
 	filter: drop-shadow(2px 2px 4px #83a0e264);
 

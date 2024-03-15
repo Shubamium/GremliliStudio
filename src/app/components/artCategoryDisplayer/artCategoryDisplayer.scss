@@ -1,0 +1,60 @@
+.art-category{
+
+	background: url('/backgrounds/plaid-two.png');
+	min-height: 1000px;
+	border-bottom: 5px solid #FDCEEC;
+	padding-top: 2em;
+	.category-list{
+		margin: 0 auto;
+		max-width: 1200px;
+		display: flex;
+		gap: 1em;
+		justify-content: center;
+	}
+	.category-detail{
+		background: url('/backgrounds/dot-neutral.png'), #FFC5C9;
+		text-align: center;
+		padding: .25em;
+		margin: 1em 0;
+		outline: 2px dashed white ;
+		outline-offset: -7px;
+		.confine{
+			max-width: 700px;
+			margin:  0 auto;
+			padding: 2em;
+
+			h2{
+				font-size: 2.4rem;
+			}
+			.pricings{
+				display: flex;
+				flex-direction: column;
+				gap: .5em;
+				margin: 1.5em auto;
+				max-width: 400px;
+				.price{
+					background: #C8B7FF;
+					outline: 3px solid #937EE1;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					color: #937EE1;
+					padding: .25em 1em;
+					
+					border-radius: 1em;
+				}
+			}
+		}
+	}
+
+	.art-list{
+		.boxes{
+			display: flex;
+			justify-content: flex-start;
+			gap: 3em;
+			flex-wrap: wrap;
+			margin: 80px auto;
+			max-width: 1200px;
+		}
+	}
+}
