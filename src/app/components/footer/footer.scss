@@ -1,0 +1,140 @@
+#footer{
+	margin-top: 200px;
+	background: url('/backgrounds/footer-text.png');
+	position: relative;
+	&::before{
+		content: '';
+		position:absolute;
+		bottom: 99%;
+		left:0%;
+		width:100%;
+		height:50px;
+
+		background: url('/decors/awning-top.png');
+
+	}
+	.confine{
+		max-width: 1200px;
+		min-height: 450px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		.info-part{
+			padding: 3em;
+			text-align: right;
+			h2{
+				font-size: 2rem;
+			}
+			p{
+				margin: 1em 0;
+				font-size: .9rem;
+			}
+			.credits{
+				font-weight: bold;
+			}
+			img{
+				max-width: 100%;
+			}
+		}
+		.misc-part{
+			position: relative;
+			.decor_splat{
+				position: absolute;
+				left: -30px;
+			}
+
+			display: grid;
+			grid-template-columns: 1.25fr 1fr;
+			padding: 2em;
+			padding-left: 3em;
+
+			border-radius:  0 5em 0 0;
+			background: url('/backgrounds/dot-neutral.png'), #E2888C;
+			h2{
+				color: #FFF495;
+				font-weight: bold;
+				letter-spacing: 1px;
+			}
+
+			.footer-nav{
+				.links-list{
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					margin-top: 1em;
+					.links{
+						display: flex;
+						flex-direction: column;
+						font-size: 1.2rem;
+						// gap: ;
+						.link{
+							display: block;
+							transition: all 500ms ease;
+							transform-origin: left;
+							font-size: 1.4rem;
+							&:hover{
+								color: #FFF495;
+								scale: 1.05;
+							}
+						}
+					}
+				}
+			}
+			.socials{
+				.socials-list{
+					.list{
+						margin-top: 1em;
+						display: grid;
+						grid-template-columns: 1fr 1fr 1fr 1fr;
+						gap: 1em;
+						.social{
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							border-radius: .5em;
+							border: 2px solid white;
+							box-shadow: 0px 4px #839FE2;
+							padding: .5em;
+							transition: all 450ms ease;
+
+							&.vgen{
+								.icon{
+									// scale: 1.2;
+									img{
+										scale: 1.5;
+									}
+								}
+							}
+							&:hover{
+								outline: 4px solid white;
+								outline-offset: 2px;
+								.icon{
+									scale: 1.2;
+									rotate: -25deg;
+								}
+							}
+							.icon{
+								transition: all 450ms ease;
+								width: 50px;
+								height: 50px;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								background: #AAC3FF;
+								border-radius: 2em;
+							}
+							background: url('/backgrounds/dot-neutral.png'),#D9E6FA;
+							img,svg{
+								width: 30px;
+								height: 30px;
+							}
+						
+						}
+					}
+				}
+				.btn-colored{
+					margin-top: 1em;
+				}
+			}
+		}
+	}
+}

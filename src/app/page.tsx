@@ -22,11 +22,11 @@ and an invite to commission you.Lorem ipsum dolor sit amet, consectetur adipisci
 						<img src="/graphics/vgen-badge.png" alt="" />
 						<span>Order on VGEN !</span>
 					</a>
-					<a href='https://vgen.co/Gremlili' target='_blank' className="btn btn-colored btn-logo">
+					<a href='https://trello.com/b/bKUi7YlW/gremlili-commissions' target='_blank' className="btn btn-colored btn-logo">
 						<img src="/graphics/trello-badge.png" alt="" />
 						<span>Commission Tracker!</span>
 					</a>
-					<Link href='/models' className="btn btn-colored gold btn-arrow">
+					<Link href='/graphics' className="btn btn-colored gold btn-arrow">
 						<span>View my works </span>
 						<FaArrowRight/>
 					</Link>

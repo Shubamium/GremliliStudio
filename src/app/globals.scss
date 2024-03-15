@@ -16,10 +16,13 @@ body {
 	background: url('/backgrounds/tile_background.png');
 	background-size: 70px;
 	min-height: 100vh;
+
+}
+:root{
+	scroll-behavior: smooth;
 }
 
 main{
-	min-height: 4000px;
 }
 a {
   color: inherit;

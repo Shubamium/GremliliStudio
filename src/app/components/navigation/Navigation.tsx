@@ -27,7 +27,7 @@ export default function Navigation({}: Props) {
 								HOME
 							</span>
 						</Link>
-						<Link href={'/contact'} className='btn-awning'>
+						<Link href={'/contacts'} className='btn-awning'>
 							<span className='icon'>
 								<GrContact/>
 							</span>
