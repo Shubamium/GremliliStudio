@@ -1,0 +1,128 @@
+#loading-screen{
+	width: 100vw;
+	height: 100vh;
+	background: url('/backgrounds/loading-bg.png'),white;
+	
+	background-size: 150px;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	// gap: 2em;
+	// justify-content: space-around;
+	.decor{
+		position:absolute;
+		top:0%;
+		left:0%;
+	}
+	.splat-top{
+		// top: ;
+		transform: translate(-50%);
+		top: -20%;
+		left: 2%;
+		animation: splat-top 500ms ease-out;
+		transform-origin: top left;
+	}
+
+	@keyframes splat-top {
+		0%{
+			rotate: -50deg;
+			scale: 0;
+		}
+		100%{
+			scale: 1;
+			rotate: 0%;
+		}
+	}
+	.splat-bottom{
+		// transform: translate(-50%);
+		top: initial;
+		left: initial;
+		right: -6%;
+		bottom: -22%;
+		animation: splat-bottom 500ms ease-out;
+		rotate: 45deg;
+	}
+	@keyframes splat-bottom {
+		0%{
+			rotate: -50deg;
+			scale: 0;
+		}
+		100%{
+			scale: 1;
+			rotate: 0%;
+		}
+	}
+	.edge-top{
+		width: 20vw;
+		height: 10vh;
+		border-top: 2px dashed white;
+		border-right: 2px dashed white;
+		border-radius: 0 1em 0 0;
+		left: initial;
+		right: 5%;
+		top: 5%;
+	}
+	.edge-bottom{
+		width: 20vw;
+		height: 10vh;
+		border-bottom: 2px dashed white;
+		border-left: 2px dashed white;
+		border-radius: 0 0 0 1em ;
+		left: 2vw;
+		top: 85vh;
+	}
+	.main-logo{
+		width: 300px;
+		animation: main-logo 2s infinite ease;
+		filter: drop-shadow(1px 2px 2px rgba(101, 101, 148, 0.519));
+	}
+	.text{
+		position: absolute;
+		bottom: 5%;
+		animation: blink 700ms infinite ease alternate-reverse;
+		letter-spacing: 5px;
+		font-weight: bold;
+		text-align: center;
+	}
+	@keyframes blink {
+		0%{
+			opacity: 0.1;
+		}
+		100%{
+			opacity: 1;
+		}
+	}
+	@keyframes main-logo {
+		0%{
+			rotate: 0deg;
+		}
+		30%{
+			scale: 1.2;
+		}
+		60%{
+			rotate: 360deg;
+		}
+		100%{
+			rotate: 360deg;
+		}
+	}
+
+	transition: all 2s ease,width 0ms, height 0s;
+
+	
+	&.loaded{
+		opacity: 0;
+		user-select: none;
+		pointer-events: none;
+		.main-logo{
+			// animation: none;
+			// transition: animation ;
+			// transition-delay: 2s;
+		}
+	}
+}

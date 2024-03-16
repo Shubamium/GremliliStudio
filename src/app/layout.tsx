@@ -7,6 +7,7 @@ import GalleryViewPopUp from "./components/galleryViewPopUp/GalleryViewPopUp";
 import TermsPopUpHandler from "./components/termsPopUpHandler/TermsPopUpHandler";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import LoadingScreen from "./components/loadingScreen/LoadingScreen";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 const fredoka = Fredoka({ subsets: ["latin"] });
@@ -28,6 +29,7 @@ export default function RootLayout({
 				<TermsPopUpHandler/>
 				{children}
 				<Footer/>
+				<LoadingScreen/>
 			</body>
     </html>
   );

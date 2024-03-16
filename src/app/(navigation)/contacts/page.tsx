@@ -2,7 +2,6 @@ import React from 'react'
 import './contacts.scss'
 import { HiPaperAirplane } from 'react-icons/hi'
 import { IoMail } from 'react-icons/io5'
-import { FaMessage } from 'react-icons/fa6'
 import { BiMessageDetail } from 'react-icons/bi'
 import { CgArrowLongRight } from 'react-icons/cg'
 import { GeneralData } from '@/app/page'
@@ -22,6 +21,7 @@ export default async function Contacts({}: Props) {
 		<main id='page_contacts'>
 			<section className='send-message'>
 				<div className="confine">
+					
 					<article className='text-part'>
 							<img src="/decors/palette-list.png" alt="" className="decor_palette" />
 							<h2> Send a Message</h2>
@@ -30,32 +30,35 @@ export default async function Contacts({}: Props) {
 								<a href="mailto:cryckat@gmail.com"><IoMail/> cryckat@gmail.com</a>
 							</div>
 					</article>
-					<form action="#" className='form-part'>
+					<form action="https://formsubmit.co/9672d6f918601b242a8e9ec8e8fec231 " method='POST' className='form-part'>
+						{/* Metadata */}
+						<input type="hidden" name="_subject" value="New contact submission from Gremlili Studio Website!"></input>
+						<input type="hidden" name="_cc" value="liusvinv@gmail.com"></input>
 						<div className="field-group">
 							<div className="field">
-								<label htmlFor="#">Identification <span className='detail'>(required)</span></label>
-								<input type="text"  placeholder='Enter your name/alias and pronouns'/>
+								<label htmlFor="identification">Identification <span className='detail'>(required)</span></label>
+								<input required type="text" name='identification'  placeholder='Enter your name/alias and pronouns'/>
 							</div>
 							<div className="field">
-								<label htmlFor="#">Email <span className='detail'>(required)</span></label>
-								<input type="email"  placeholder='Enter your email'/>
+								<label htmlFor='email' >Email <span className='detail'>(required)</span></label>
+								<input  required type="email" name='email'  placeholder='Enter your email'/>
 							</div>
 						</div>
 							<div className="field">
-								<label htmlFor="#">Social Media</label>
-								<input type="text"  placeholder='Enter your most used social media'/>
+								<label htmlFor="social_media">Social Media</label>
+								<input type="text" name='social_media'  placeholder='Enter your most used social media'/>
 							</div>
 							<div className="field">
-								<label htmlFor="#">Subject</label>
-								<input type="text"  placeholder='The subject of your inquiry'/>
+								<label  htmlFor="subject">Subject</label>
+								<input required type="text" name='subject'  placeholder='The subject of your inquiry'/>
 							</div>
 							<div className="field">
-								<label htmlFor="message">Message</label>
-								<textarea name="message" placeholder='Enter your message here. . .' id="message-field"></textarea>
+								<label  htmlFor="message">Message</label>
+								<textarea required name="message" placeholder='Enter your message here. . .' id="message-field"></textarea>
 							</div>
 
 							<div className="action">
-								<button className='btn btn-colored gold btn-send'>
+								<button type='submit' className='btn btn-colored gold btn-send'>
 									SEND <HiPaperAirplane/>
 								</button>
 							</div>
