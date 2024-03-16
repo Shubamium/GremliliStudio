@@ -1,13 +1,29 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import './adoptableList.scss'
 import AdoptableDisplayer from '../adoptableDisplayer/AdoptableDisplayer'
-type Props = {}
 import Slider from 'react-slick'
+import { urlFor } from '@/db/db'
 
 
+export type Adoptable = {
+	name:string
+	isAdopted:boolean,
+	image:any,
+	includes:{
+		title:string
+		description:string
+	}[]
+	price:string
+}
 
-export default function AdoptableList({}: Props) {
+type Props = {
+	adoptables:Adoptable[]
+}
+
+export default function AdoptableList({
+	adoptables
+}: Props) {
 	const settings:any = {
 		dots: true,
     infinite: true,
@@ -15,19 +31,31 @@ export default function AdoptableList({}: Props) {
     slidesToShow: 3,
     slidesToScroll: 1,
 	}
+
+	const [visibleType,setVisibleType] = useState('available');
+
+	const toRender = visibleType === 'adopted' ? adoptables.filter((adopt)=> adopt.isAdopted === true) : adoptables.filter((adopt)=> adopt.isAdopted !== true)
 	return (
 		<section className='adoptable-list'>
 			<div className="action">
-					<button className='btn btn-colored green'>AVAILABLE</button>
-					<button className='btn btn-colored gold'>ADOPTED</button>
+					<button onClick={()=>{
+						setVisibleType('available')
+					}} className={`btn btn-colored ${visibleType === 'available' ? 'selected' : ''}  green`}>AVAILABLE</button>
+					<button onClick={()=>{
+						setVisibleType('adopted')
+					}}  className={`btn btn-colored ${visibleType === 'adopted' ? 'selected' : ''} gold`}>ADOPTED</button>
 			</div>
+				
 			<Slider className="lists" {...settings}>
-				<AdoptableDisplayer 
-					image={'/graphics/adoptable_main.png'}
-				/>
-				<AdoptableDisplayer 
-					image={'/graphics/adoptable_main.png'}
-				/>
+						{toRender.map((adopt,index)=>{
+							return <AdoptableDisplayer 
+							{...adopt}
+							key={'adoptable-displayer'+index}
+							image={urlFor(adopt.image).url()}
+							/>
+						})}
+					{toRender.length < 2 && (<div className="pad"></div>)}
+					{toRender.length < 3 && (<div className="pad"></div>)}
 			</Slider>
 		</section>
 	)

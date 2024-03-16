@@ -2,8 +2,41 @@ import { FaArrowRight, FaPaintBrush, FaPalette } from 'react-icons/fa';
 import './home.scss'
 import Link from 'next/link';
 import { BiPaintRoll } from 'react-icons/bi';
+import { fetchData } from '@/db/db';
+import { PortableText } from 'next-sanity';
 
-export default function Home() {
+export type GeneralData = {
+  preset: string;
+  home: {
+    intro: string;
+    notice: any[];
+    commission: string;
+  };
+  contact: string;
+  direct_contact: string;
+  footer: string;
+  section_desc: {
+    graphics_desc: string;
+    models_desc: string;
+    adoptable_desc: string;
+	}
+};
+
+export default async function Home() {
+	
+	const generalData = await fetchData<GeneralData[]>(`
+		*[_type == 'general' && preset == 'main'] {
+			preset,
+			home {
+				intro,
+				notice,
+				commission
+			},
+			
+		}
+	`)
+	const mainData = generalData[0];
+
   return (
     <main className={'page_home'} id='page_home'>
 			<section className="banner-part">
@@ -12,8 +45,7 @@ export default function Home() {
 			</section>
 
 			<section className='intro-text'>
-				<p>Introductory text here about what you’re providing in general 
-and an invite to commission you.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+				<p>{mainData.home.intro}</p>
 				<div className="action">
 					<div className="decor_edge">
 						<FaPalette/>
@@ -48,8 +80,9 @@ and an invite to commission you.Lorem ipsum dolor sit amet, consectetur adipisci
 							<BiPaintRoll/> 
 							<h2>NOTICE</h2>
 						</div>
-						<p> <strong>I operate as a solo artist studio</strong>, relying on commissions for sustenance. {`It's`} important to note that I am legally disabled, which can result in a <strong>slower pace of work</strong> compared to other artists. Depending on the nature of the commission, my waitlist may <strong>extend up to six months</strong>. If you require a substantial volume of assets in a short timeframe, I may not be the most suitable artist for your needs. </p>
-						<p>For further details, please reach out to me to discuss the turnaround time, as it can vary based on the specific item, and I may be able to accommodate rush requests with applicable.</p>
+						<PortableText
+							value={mainData.home.notice}
+						/>
 					</article>
 				</div>
 			</section>
@@ -58,7 +91,7 @@ and an invite to commission you.Lorem ipsum dolor sit amet, consectetur adipisci
 				<div className="confine">
 					<article className='shadow'>
 						<h2>COMMISSION</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						<p>{mainData.home.commission}</p>
 					</article>
 					<figure>
 						<img src="/graphics/grem-pfp.png" alt=""  className='shadow'/>

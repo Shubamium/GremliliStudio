@@ -5,9 +5,19 @@ import { IoMail } from 'react-icons/io5'
 import { FaMessage } from 'react-icons/fa6'
 import { BiMessageDetail } from 'react-icons/bi'
 import { CgArrowLongRight } from 'react-icons/cg'
+import { GeneralData } from '@/app/page'
+import { fetchData } from '@/db/db'
 type Props = {}
 
-export default function Contacts({}: Props) {
+export default async function Contacts({}: Props) {
+	const generalData = await fetchData<GeneralData[]>(`
+		*[_type == 'general' && preset == 'main'] {
+			preset,
+			contact,
+			direct_contact,
+		}
+	`)
+	const mainData = generalData[0];
 	return (
 		<main id='page_contacts'>
 			<section className='send-message'>
@@ -15,10 +25,9 @@ export default function Contacts({}: Props) {
 					<article className='text-part'>
 							<img src="/decors/palette-list.png" alt="" className="decor_palette" />
 							<h2> Send a Message</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-							<p>(For Quote or business proposals/sponsorships)</p>
+							<p>{mainData.contact}</p>
 							<div className="email">
-								<a href="mailto:cryckat@gmail.com"><IoMail/> cryckat@gmail</a>
+								<a href="mailto:cryckat@gmail.com"><IoMail/> cryckat@gmail.com</a>
 							</div>
 					</article>
 					<form action="#" className='form-part'>
@@ -58,7 +67,7 @@ export default function Contacts({}: Props) {
 				<div className="confine">
 						<div className="text">
 							<h2>Get in touch directly!</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+							<p>{mainData.direct_contact}</p>
 						</div>
 						<div className="action">
 							<button className="btn btn-colored">

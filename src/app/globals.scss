@@ -43,6 +43,9 @@ a {
 	&:active{
 		scale: .95;
 	}
+	&.selected{
+		scale:1.1;
+	}
 }
 .btn-logo{
 	// background: white;

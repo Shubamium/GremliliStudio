@@ -4,6 +4,7 @@ import './artCategoryDisplayer.scss'
 import ArtBox from '../displayer/artBox/ArtBox'
 import { category } from '@/app/(navigation)/graphics/page'
 import Slick from 'react-slick'
+import { ImageEventData } from '../galleryViewPopUp/GalleryViewPopUp'
 type Props = {
 	categoryList:category[]
 }
@@ -31,10 +32,22 @@ const renderer = [
 	(imageList:string[])=>{
 		return <Slick  {...settings}   pauseOnFocus={false} easing='linear' className="lists">
 			{imageList.map((image,index)=>{
-				return <div className="list" key={'image-list'+index}>
-					<img src={image} alt="" />
+				return <div className="list"  key={'image-list'+index}>
+					<img src={image} alt="" onClickCapture={()=>{
+					const event = new CustomEvent<ImageEventData>('modal_gallery', {
+						detail:{
+							image:image
+						},
+					})
+					document.body.dispatchEvent(event);
+				}} />
 				</div>
 			})}
+			{
+				imageList.length < 2 && <div className="list"></div>
+			}{
+				imageList.length < 3 && <div className="list"></div>
+			}
 		</Slick>
 	},
 	(imageList:string[])=>{

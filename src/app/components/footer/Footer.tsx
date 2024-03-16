@@ -4,15 +4,25 @@ import Link from 'next/link'
 import { IoMail } from 'react-icons/io5'
 import { FaTwitter } from 'react-icons/fa'
 import { CgArrowTopRightO } from 'react-icons/cg'
+import { GeneralData } from '@/app/page'
+import { fetchData } from '@/db/db'
 type Props = {}
 
-export default function Footer({}: Props) {
+export default async function Footer({}: Props) {
+	const generalData = await fetchData<GeneralData[]>(`
+	*[_type == 'general' && preset == 'main'] {
+		preset,
+		footer
+	}
+`)
+const mainData = generalData[0];
+
 	return (
 		<footer id="footer">
 			<div className="confine">
 				<div className="info-part">
 					<img src="/graphics/logo_white.png" alt="" className='footer-logo' />
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p>{mainData.footer}</p>
 					<a href="https://twitter.com/gremlilistudio" className='credits' target="_blank">©2022 by Gremlili and Shubamium</a>
 				</div>
 				<div className="misc-part">

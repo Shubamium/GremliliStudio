@@ -3,14 +3,17 @@ import React from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 import './adoptableDisplayer.scss'
 import { ImageEventData } from '../galleryViewPopUp/GalleryViewPopUp'
+import { Adoptable } from '../adoptableList/AdoptableList'
 
-type Props = {
-	image:string
-}
+type Props = Adoptable
 
 
 export default function AdoptableDisplayer({
-	image
+	image,
+	includes,
+	isAdopted,
+	name,
+	price
 }: Props) {
 	return (
 		<div className='adoptable'>
@@ -20,26 +23,21 @@ export default function AdoptableDisplayer({
 			</figure>
 			<article>
 				<div className="data-top">
-					<div className="status adopt">
-						<h2>ADOPTED</h2>
+					<div className={`status ${isAdopted ? 'adopt' : 'available'}`}>
+						<h2>{isAdopted ? 'ADOPTED' : 'AVAILABLE'}</h2>
 					</div>
 					<div className="name">
-						<h2>Choco-mint Bunny </h2>
+						<h2>{name} </h2>
 					</div>
 					<div className="includes">
-						<div className="include">
-							<h2 >3 Expressions </h2>
-							<p>Pre-Order</p>
-						</div>
-						<div className="include">
-							<p>Pre-Order</p>
-						</div>
-						<div className="include">
-							<p>Pre-Order</p>
-						</div>
-						<div className="include">
-							<p>Pre-Order</p>
-						</div>
+						{includes?.map((include,index)=>{
+							return (
+								<div className="include" key={name+'include-title'+index}>
+									{include.title && <h2>{include.title}</h2>}
+									<p>{include.description}</p>
+								</div>
+							)
+						})}
 					</div>
 				</div>
 				<div className="data-bottom">
@@ -57,7 +55,7 @@ export default function AdoptableDisplayer({
 			</article>
 
 			<div className="price">
-				<p>$400 <span className='unit'>USD</span></p>
+				<p>{price} <span className='unit'>USD</span></p>
 			</div>
 		</div>
 	)

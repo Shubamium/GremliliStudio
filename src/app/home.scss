@@ -129,6 +129,8 @@
 				// width:100%;
 				transform: translate(-20%);
 				height:100%;
+				user-select: none;
+				pointer-events: none;
 			}
 			figure{
 				display: flex;
