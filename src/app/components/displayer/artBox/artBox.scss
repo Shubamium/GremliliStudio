@@ -5,7 +5,8 @@
 
 	border: 5px solid #FFC5C9;
 	border-radius: 2em;
-
+	background: url('/backgrounds/tile_pink.png');
+	filter: drop-shadow(2px 2px 2px rgba(73, 45, 175, 0.5));
 	&.portrait{
 		height: 600px;
 		.top{
@@ -23,7 +24,6 @@
 		height: 100%;
 		border-radius: 2em;
 		object-fit: cover;
-		background: white;
 	}
 	position: relative;
 	.btn-fs{
