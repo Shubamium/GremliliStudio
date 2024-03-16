@@ -5,6 +5,8 @@ import { CSSProperties } from "react";
 import Footer from "./components/footer/Footer";
 import GalleryViewPopUp from "./components/galleryViewPopUp/GalleryViewPopUp";
 import TermsPopUpHandler from "./components/termsPopUpHandler/TermsPopUpHandler";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 const fredoka = Fredoka({ subsets: ["latin"] });

@@ -56,5 +56,17 @@
 			margin: 80px auto;
 			max-width: 1200px;
 		}
+		.lists{
+			.list{
+				height: 400px;
+				margin: 20px;
+				padding: 1em;
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+			}
+		}
 	}
 }

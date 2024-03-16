@@ -18,11 +18,15 @@ const sampleData:category[] = [
 	{
 		title:'Twitch Assets',
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
-		renderType:0,
+		renderType:2,
 		imageList:[
-			'https://picsum.photos/id/59/350/350',
-			'https://picsum.photos/id/59/350/350',
-			'https://picsum.photos/id/59/350/350',
+			'https://picsum.photos/id/59/350/680',
+			'https://picsum.photos/id/59/350/680',
+			'https://picsum.photos/id/59/350/680',
+			'https://picsum.photos/id/59/350/680',
+			'https://picsum.photos/id/59/350/680',
+			'https://picsum.photos/id/59/350/680',
+			'https://picsum.photos/id/59/350/680',
 		]
 	},
 	{
@@ -30,9 +34,9 @@ const sampleData:category[] = [
 		description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
 		renderType:0,
 		imageList:[
-			'https://picsum.photos/id/59/350/350',
-			'https://picsum.photos/id/59/350/350',
-			'https://picsum.photos/id/59/350/350',
+			'https://picsum.photos/id/59/350/680',
+			'https://picsum.photos/id/59/350/680',
+			'https://picsum.photos/id/59/350/680',
 		],
 		pricing:[
 			{

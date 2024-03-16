@@ -4,8 +4,6 @@ import './adoptableList.scss'
 import AdoptableDisplayer from '../adoptableDisplayer/AdoptableDisplayer'
 type Props = {}
 import Slider from 'react-slick'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 
 

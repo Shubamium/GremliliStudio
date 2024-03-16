@@ -5,12 +5,25 @@
 
 	border: 5px solid #FFC5C9;
 	border-radius: 2em;
+
+	&.portrait{
+		height: 600px;
+		.top{
+			left: 60%;
+			top: -20%;
+		}
+		.bottom{
+			top: 82%;
+			right: 70%;
+		}
+	}
 	z-index: 2;
 	.main-img{
 		width: 100%;
 		height: 100%;
 		border-radius: 2em;
 		object-fit: cover;
+		background: white;
 	}
 	position: relative;
 	.btn-fs{
@@ -40,6 +53,11 @@
 		left:0%;
 		z-index: -2;
 	}
+	.decor_palette{
+		z-index: 10;
+		left: 80%;
+		top:80%;
+	}
 	.top{
 		left: 60%;
 		top: -30%;
@@ -47,8 +65,8 @@
 	}
 	.bottom{
 		top: 70%;
-		left: initial;
 		right: 70%;
+		left: initial;
 		scale: .5;
 	}
 }

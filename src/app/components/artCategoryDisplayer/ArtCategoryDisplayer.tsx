@@ -3,10 +3,20 @@ import React, { useState } from 'react'
 import './artCategoryDisplayer.scss'
 import ArtBox from '../displayer/artBox/ArtBox'
 import { category } from '@/app/(navigation)/graphics/page'
+import Slick from 'react-slick'
 type Props = {
 	categoryList:category[]
 }
 
+const settings = {
+	dots: true,
+	infinite: true,
+	slidesToShow: 3,
+	slidesToScroll: 3,
+	autoplay:true,
+	autoplaySpeed:3000,
+	speed:3000,
+}
 
 const renderer = [
 	(imageList:string[])=>{
@@ -19,14 +29,22 @@ const renderer = [
 		</div>
 	},
 	(imageList:string[])=>{
-		return imageList.map((image,index)=>{
-			return <ArtBox image={image} key={index}/>
-		})
+		return <Slick  {...settings}   pauseOnFocus={false} easing='linear' className="lists">
+			{imageList.map((image,index)=>{
+				return <div className="list" key={'image-list'+index}>
+					<img src={image} alt="" />
+				</div>
+			})}
+		</Slick>
 	},
 	(imageList:string[])=>{
-		return imageList.map((image,index)=>{
-			return <ArtBox image={image} key={index}/>
-		})
+		return <div className="boxes">
+		{
+			imageList.map((image,index)=>{
+				return <ArtBox isPortrait={true} image={image} key={index}/>
+			})
+		}
+	</div>
 	},
 ]
 
