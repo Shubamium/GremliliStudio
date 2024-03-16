@@ -1,0 +1,30 @@
+.popup{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	.overlay{
+		height: 100%;
+		width: 100%;
+		background: #d3e2f9b2;
+		z-index: 100;
+		left: 0%;
+		right: 0%;
+		position:absolute;
+		backdrop-filter: blur(.25vw);
+	}
+	transition: all 500ms ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.content{
+		z-index: 150;
+	}
+	&.closed{
+		opacity: 0;
+		pointer-events: none;
+		user-select: none;
+	}
+}

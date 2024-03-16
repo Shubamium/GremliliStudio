@@ -1,0 +1,27 @@
+.gallery_viewer{
+	.close-btn{
+		position: absolute;
+		left: 0%;
+		top: 5%;
+		display: flex;
+		padding-right: 10px;
+		width: 100%;
+		justify-content: flex-end;
+		z-index: 100;
+	}
+	.main-img{
+		height: 80vh;
+		width: 80vw;
+		object-fit: contain;
+		// border-radius: 2em;
+		scale: 0;
+		transition: all 500ms ease;
+		filter: drop-shadow(0px 0px 4px rgba(23, 51, 94, 0.671));
+	}
+
+	&.open{
+		.main-img{
+			scale: 1;
+		}
+	}
+}
