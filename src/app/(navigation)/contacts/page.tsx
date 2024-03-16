@@ -64,7 +64,7 @@ export default function Contacts({}: Props) {
 							<button className="btn btn-colored">
 							 Discord <CgArrowLongRight/> Gremlili#9706
 							</button>
-							<a href='https://twitter.com/Gremlili' target='_blank' className="btn btn-colored gold">
+							<a href='https://twitter.com/GremliliStudio' target='_blank' className="btn btn-colored gold">
 								Message me on Twitter
 								<BiMessageDetail/>
 							</a>

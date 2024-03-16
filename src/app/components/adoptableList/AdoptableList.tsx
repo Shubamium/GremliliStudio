@@ -24,8 +24,12 @@ export default function AdoptableList({}: Props) {
 					<button className='btn btn-colored gold'>ADOPTED</button>
 			</div>
 			<Slider className="lists" {...settings}>
-				<AdoptableDisplayer/>
-				<AdoptableDisplayer/>
+				<AdoptableDisplayer 
+					image={'/graphics/adoptable_main.png'}
+				/>
+				<AdoptableDisplayer 
+					image={'/graphics/adoptable_main.png'}
+				/>
 			</Slider>
 		</section>
 	)

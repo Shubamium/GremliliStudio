@@ -1,14 +1,21 @@
+'use client'
 import React from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 import './adoptableDisplayer.scss'
-type Props = {}
+import { ImageEventData } from '../galleryViewPopUp/GalleryViewPopUp'
+
+type Props = {
+	image:string
+}
 
 
-export default function AdoptableDisplayer({}: Props) {
+export default function AdoptableDisplayer({
+	image
+}: Props) {
 	return (
 		<div className='adoptable'>
 			<figure>
-				<img src="/graphics/adoptable_main.png" alt="" className='main-img' />
+				<img src={image} alt="" className='main-img' />
 				<img src="/decors/splatter-yellow.png" alt="" className='decor_splatter' />
 			</figure>
 			<article>
@@ -36,7 +43,14 @@ export default function AdoptableDisplayer({}: Props) {
 					</div>
 				</div>
 				<div className="data-bottom">
-					<button className='btn btn-preview'>
+					<button onClick={()=>{
+							const event = new CustomEvent<ImageEventData>('modal_gallery', {
+								detail:{
+									image:image
+								},
+							})
+							document.body.dispatchEvent(event);
+					}} className='btn btn-preview'>
 						Preview <FaArrowRight/>
 					</button>
 				</div>

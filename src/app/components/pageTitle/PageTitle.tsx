@@ -1,15 +1,19 @@
+'use client'
 import Link from 'next/link'
 import React from 'react'
 import { FaList } from 'react-icons/fa6'
 import './pageTitle.scss'
+import { TermsEventData } from '../termsPopUp/TermsPopUp'
 type Props = {
 	title:string,
 	description:string,
+	type:string,
 }
 
 export default function PageTitle({
 	title,
-	description
+	description,
+	type
 }: Props) {
 	return (
 		<div className='page-title shadow'>
@@ -18,7 +22,14 @@ export default function PageTitle({
 					<p>{description}</p>
 					<img src="/decors/decor_palette.png" alt="" className='decor_palette'/>
 					<div className="action">
-						<button className='btn btn-colored btn-terms'>
+						<button onClick={()=>{
+							const event = new CustomEvent<TermsEventData>('modal_terms', {
+								detail:{
+									type:type
+								},
+							})
+							document.body.dispatchEvent(event);
+						}} className='btn btn-colored btn-terms'>
 							<FaList/> Terms of Service
 							<span className='sub-title'>{title}</span>
 						</button>

@@ -9,6 +9,7 @@ export default function page({}: Props) {
 		<main id='page_adoptables'>
 			<PageTitle
 				title='Adoptables'
+				type='adoptables'
 				description='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.'
 			/>
 			<AdoptableList/>

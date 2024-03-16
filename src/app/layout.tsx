@@ -4,6 +4,7 @@ import "./globals.scss";
 import { CSSProperties } from "react";
 import Footer from "./components/footer/Footer";
 import GalleryViewPopUp from "./components/galleryViewPopUp/GalleryViewPopUp";
+import TermsPopUpHandler from "./components/termsPopUpHandler/TermsPopUpHandler";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 const fredoka = Fredoka({ subsets: ["latin"] });
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={quicksand.className}style={{'--fontMain':quicksand.style.fontFamily,'--fontAlt':fredoka.style.fontFamily} as CSSProperties} >
 				<GalleryViewPopUp/>
+				<TermsPopUpHandler/>
 				{children}
 				<Footer/>
 			</body>

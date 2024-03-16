@@ -12,6 +12,7 @@ export default function NavLayout({
 		<div className="nav-layout">
 			<Navigation/>
 			{children}
+			
 		</div>
 	)
 }

@@ -10,7 +10,7 @@ export type ImageEventData = {
 	image:string
 }
 export default function GalleryViewPopUp({}: Props) {
-	const [isOpen,setIsOpen] = useState(true)
+	const [isOpen,setIsOpen] = useState(false)
 	const [activeImage,setActiveImage] = useState('')
 	useEffect(()=>{
 
