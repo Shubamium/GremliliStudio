@@ -33,7 +33,7 @@ export default async function Contacts({}: Props) {
 					<form action="https://formsubmit.co/9672d6f918601b242a8e9ec8e8fec231 " method='POST' className='form-part'>
 						{/* Metadata */}
 						<input type="hidden" name="_subject" value="New contact submission from Gremlili Studio Website!"></input>
-						<input type="hidden" name="_cc" value="liusvinv@gmail.com"></input>
+						<input type="hidden" name="_cc" value="cryckat@gmail.com"></input>
 						<div className="field-group">
 							<div className="field">
 								<label htmlFor="identification">Identification <span className='detail'>(required)</span></label>
