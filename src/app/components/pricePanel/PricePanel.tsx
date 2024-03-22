@@ -4,18 +4,26 @@ import { urlFor } from '@/db/db'
 import React from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 import { IoIosCheckmark } from 'react-icons/io'
-
-type Props = PricingData
+import {motion} from 'framer-motion'
+type Props = PricingData & {
+	delay:number
+}
 
 export default function PricePanel({
 	addons,
 	price,
 	title,
 	includes,
-	extra
+	extra,
+	delay
 }: Props) {
 	return (
-		<div className="price-panel">
+		<motion.div
+			initial={{scale:1,opacity:0}}
+			whileInView={{scale:[0,1.2,0.9,1],opacity:1}}
+			transition={{duration:0.5,bounce:2,delay:delay*0.2}}
+			animate={{scale:0,transition:{duration:0,delay:0}}}
+			className="price-panel">
 					<div className="price">
 						<p>{price} <span className='unit'>USD</span></p>
 					</div>
@@ -53,10 +61,14 @@ export default function PricePanel({
 						}} className='btn btn-expression'>{extra.button} <FaArrowRight/></button>}
 						<div className="extra-price-list">
 							{addons?.map((addon,index)=>{
-								return 		<div className="extra-price" key={'addon-list'+title+'-'+index}>
+								return 		<motion.div 
+								initial={{y:-100, opacity:0}}
+								whileInView={{y:0,opacity:1}}
+								transition={{duration:0.5,delay:index*0.2}}
+								className="extra-price" key={'addon-list'+title+'-'+index}>
 								<h2>{addon.price}</h2>
 								<p>{addon.title}</p>
-							</div>
+							</motion.div>
 							})}
 							{/* <div className="extra-price">
 								<h2>3$</h2>
@@ -64,6 +76,6 @@ export default function PricePanel({
 							</div> */}
 						</div>
 					</div>
-				</div>
+				</motion.div>
 	)
 }

@@ -6,6 +6,7 @@ import { GrContact } from 'react-icons/gr'
 import { SiTaichigraphics } from 'react-icons/si'
 import { BsPersonFillAdd } from 'react-icons/bs'
 import { PiMaskHappyFill } from 'react-icons/pi'
+import { ImTwitch } from 'react-icons/im'
 
 type Props = {}
 
@@ -27,22 +28,25 @@ export default function Navigation({}: Props) {
 								HOME
 							</span>
 						</Link>
-						<Link href={'/contacts'} className='btn-awning'>
-							<span className='icon'>
-								<GrContact/>
-							</span>
-							<span className='name'>
-								CONTACT
-							</span>
-						</Link>
 						<Link href={'/graphics'} className='btn-awning'>
 							<span className='icon'>
-								<SiTaichigraphics/>
+								{/* <SiTaichigraphics/> */}
+								<ImTwitch/>
 							</span>
 							<span className='name'>
-								GRAPHICS
+								TWITCH ASSETS
 							</span>
 						</Link>
+						<Link href={'/models'} className='btn-awning'>
+							<span className='icon'>
+								<PiMaskHappyFill/>
+							</span>
+							<span className='name'>
+								LIVE2D
+								MODELS
+							</span>
+						</Link>
+		
 						<Link href={'/adoptables'} className='btn-awning'>
 							<span className='icon'>
 								<BsPersonFillAdd/>
@@ -51,12 +55,14 @@ export default function Navigation({}: Props) {
 								ADOPTABLES
 							</span>
 						</Link>
-						<Link href={'/models'} className='btn-awning'>
+						<Link href={'/contacts'} className='btn-awning'>
 							<span className='icon'>
-								<PiMaskHappyFill/>
+								<GrContact/>
+
 							</span>
 							<span className='name'>
-								MODELS
+								CONTACT
+
 							</span>
 						</Link>
 				</nav>

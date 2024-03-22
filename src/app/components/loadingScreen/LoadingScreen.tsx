@@ -25,7 +25,7 @@ export default function LoadingScreen({}: Props) {
 				<div className="decor edge-bottom"></div>
 
 				<img src="/graphics/logo_white.png" alt="" className='main-logo' />
-				<p className='text'>SETTING UP THE STUDIO . . .</p>
+				<p className='text'>Loading the website . . .</p>
 		</div>
 	)
 }

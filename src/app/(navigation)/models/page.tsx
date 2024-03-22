@@ -220,6 +220,7 @@ export default async function page({}: Props) {
 				{modelsPricingData.map((price,index)=>{
 					return <PricePanel
 					key={price.title+'-panel-'+index}
+					delay={index+1}
 					{...price}
 				/>
 				})}

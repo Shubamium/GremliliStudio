@@ -18,6 +18,7 @@
 		margin: 1em 0;
 		outline: 2px dashed white ;
 		outline-offset: -7px;
+		transition: all 500ms ease;
 		.confine{
 			max-width: 700px;
 			margin:  0 auto;
