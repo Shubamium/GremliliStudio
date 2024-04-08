@@ -16,8 +16,11 @@ const settings = {
 	slidesToShow: 3,
 	slidesToScroll: 3,
 	autoplay:true,
-	autoplaySpeed:3000,
-	speed:3000,
+	autoplaySpeed:7500,
+	speed:7500,
+	pauseOnHover:false,
+	pauseOnFocus:false,
+	cssEase:'linear'
 }
 
 const renderer = [
