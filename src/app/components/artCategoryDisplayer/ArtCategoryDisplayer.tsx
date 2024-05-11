@@ -44,26 +44,9 @@ const renderer = [
         className="lists"
       >
         {imageList.map((image, index) => {
-          return (
-            <div className="list" key={"image-list" + index}>
-              <img
-                src={image}
-                alt=""
-                onClickCapture={() => {
-                  const event = new CustomEvent<ImageEventData>(
-                    "modal_gallery",
-                    {
-                      detail: {
-                        image: image,
-                      },
-                    }
-                  );
-                  document.body.dispatchEvent(event);
-                }}
-              />
-            </div>
-          );
+          return <ArtBox image={image} key={index} fullClick={true} />;
         })}
+
         {imageList.length < 2 && <div className="list"></div>}
         {imageList.length < 3 && <div className="list"></div>}
       </Slick>
@@ -80,6 +63,42 @@ const renderer = [
   },
 ];
 
+// (imageList: string[]) => {
+// 	return (
+// 		<Slick
+// 			{...settings}
+// 			// pauseOnFocus={false}
+// 			easing="linear"
+// 			pauseOnDotsHover={false}
+// 			pauseOnFocus={false}
+// 			className="lists"
+// 		>
+// 			{imageList.map((image, index) => {
+// 				return (
+// 					<div className="list" key={"image-list" + index}>
+// 						<img
+// 							src={image}
+// 							alt=""
+// 							onClickCapture={() => {
+// 								const event = new CustomEvent<ImageEventData>(
+// 									"modal_gallery",
+// 									{
+// 										detail: {
+// 											image: image,
+// 										},
+// 									}
+// 								);
+// 								document.body.dispatchEvent(event);
+// 							}}
+// 						/>
+// 					</div>
+// 				);
+// 			})}
+// 			{imageList.length < 2 && <div className="list"></div>}
+// 			{imageList.length < 3 && <div className="list"></div>}
+// 		</Slick>
+// 	);
+// },
 const colorOrderArray = ["", "pink", "purple", "green", "gold"];
 export default function ArtCategoryDisplayer({ categoryList }: Props) {
   const [activeCategory, setActiveCategory] = useState(0);
